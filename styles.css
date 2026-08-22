@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    background-color: rgb(255, 203, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 1rem;
+    min-height: 100vh;
+
+}
+.container{
+
+    background-color: rgb(255, 176, 203);
+    border-radius: 7%;
+    min-height: 10rem;
+    min-width: 15rem;
+    padding: 1rem;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    
+    font-family: Fredoka;
+}
+
+button{
+    background-color: transparent;
+    color: purple;
+    border: 0cap;
+    
+
+}
+#task-list{
+    list-style: none;
+    margin-right: 10rem;
+    text-align: left;
+    
+
+}
+#task-list:hover{
+   
+    cursor: pointer;
+}
+
+
+#task-input{
+    padding: 0.5rem;
+    border-radius: 10%;
+    margin-top: 5vh;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border:0cap;
+    margin-bottom: 1vh;
+
+}
+#task-input:hover{
+    cursor: pointer;
+   
+}
+#task-input:active{
+    transform: scale(0.98);
+}
+
+#task-btn{
+    background-color: rgb(253, 0, 237);
+    color: rgb(255, 179, 247);
+    padding: 0.5rem;
+    border-radius: 7%;
+    margin-top: 5vh;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    font-family: Fredoka;
+    border: 0cap;
+    
+}
+
+
+#task-btn:hover{
+
+    background-color: rgb(193, 0, 180);
+
+    cursor: pointer;
+
+}
+#task-btn:active{
+transform: scale(95%);
+}
+.completed{
+    opacity: 0.5;
+
+
+
+}
