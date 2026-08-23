@@ -10,7 +10,7 @@
 
 
 body{
-    background-color: rgb(255, 203, 252);
+    background-color: rgb(255, 224, 238);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ body{
 }
 .container{
 
-    background-color: rgb(255, 176, 203);
+    background-color: rgb(255, 183, 207);
     border-radius: 7%;
     min-height: 10rem;
     min-width: 15rem;
@@ -32,17 +32,28 @@ body{
     font-family: Fredoka;
 }
 
-button{
+.deleteButton{
     background-color: transparent;
-    color: purple;
+    color: rgb(110, 40, 65);
     border: 0cap;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    transition: 0.1s;
     
+
+}
+.deleteButton:hover{
+    cursor: pointer;
+    color: rgb(80, 25, 45);
+    transform: scale(1.1);
+    background-color: rgb(239, 143, 170);
 
 }
 #task-list{
     list-style: none;
-    margin-right: 10rem;
-    text-align: left;
+   
+    
     
 
 }
@@ -53,6 +64,8 @@ button{
 
 
 #task-input{
+    background-color: rgb(255, 241, 246);
+    color: rgb(92, 45, 60);
     padding: 0.5rem;
     border-radius: 10%;
     margin-top: 5vh;
@@ -67,20 +80,46 @@ button{
 }
 #task-input:active{
     transform: scale(0.98);
+    
+}
+#task-input:focus{
+    outline: 2px solid rgb(239, 143, 170);
 }
 
+
 #task-btn{
-    background-color: rgb(253, 0, 237);
+    background-color: rgb(226, 103, 143);
     color: rgb(255, 179, 247);
     padding: 0.5rem;
     border-radius: 7%;
     margin-top: 5vh;
+    margin-bottom: 1vh;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     font-family: Fredoka;
     border: 0cap;
+    transition: 0.2;
     
 }
 
+li{
+    padding: 0.5rem;
+    min-width: 10rem;
+    display: flex;
+    border-radius: 10%;
+    background-color: rgb(255, 218, 230);
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+
+
+}
+li:hover{
+    transform: translateY(-3px) scale(1.01);
+    background-color: rgb(255, 198, 216);
+
+
+}
 
 #task-btn:hover{
 
@@ -89,12 +128,19 @@ button{
     cursor: pointer;
 
 }
+#task-btn:hover{
+    transform: scale(1.01);
+    background-color: rgb(202, 76, 119)
+
+
+}
 #task-btn:active{
 transform: scale(95%);
 }
 .completed{
     opacity: 0.5;
-
+    text-decoration: line-through;
+    transition: 0.3s;
 
 
 }

@@ -7,19 +7,24 @@ inputButton.addEventListener("click",addTask);
 function addTask(){
     if(inputBox.value.trim() !== ""){
     const taskText = inputBox.value.trim();
+
     const task = document.createElement("li");
-    task.textContent = taskText;
+    const taskTextElement = document.createElement("span");
+    taskTextElement.textContent = taskText;
+    task.appendChild(taskTextElement);
     taskList.appendChild(task);
     task.addEventListener("click", completeTask)
   
     inputBox.value = "";
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "x"
+    deleteButton.classList.add("deleteButton");
     task.appendChild(deleteButton);
     deleteButton.addEventListener("click", deleteTask);
 
     }
 }
+
 
 function deleteTask(event){
     const li = event.target.parentElement;
@@ -28,8 +33,9 @@ function deleteTask(event){
 
 }
 function completeTask(e){
+    e.target.classList.toggle("completed")
    
-    console.log(e.target);
+    
     
     
     
