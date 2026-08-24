@@ -32,18 +32,21 @@ body{
     font-family: Fredoka;
 }
 
+
 .deleteButton{
     background-color: transparent;
     color: rgb(110, 40, 65);
     border: 0cap;
     width: 24px;
     height: 24px;
+
     border-radius: 100%;
     transition: 0.1s;
     
 
 }
 .deleteButton:hover{
+    
     cursor: pointer;
     color: rgb(80, 25, 45);
     transform: scale(1.1);
@@ -78,19 +81,28 @@ body{
     cursor: pointer;
    
 }
+
 #task-input:active{
     transform: scale(0.98);
     
 }
+
 #task-input:focus{
+
+    
+
     outline: 2px solid rgb(239, 143, 170);
+
 }
 
 
 #task-btn{
+
     background-color: rgb(226, 103, 143);
     color: rgb(255, 179, 247);
+
     padding: 0.5rem;
+    
     border-radius: 7%;
     margin-top: 5vh;
     margin-bottom: 1vh;
@@ -98,10 +110,11 @@ body{
     font-family: Fredoka;
     border: 0cap;
     transition: 0.2;
-    
+     
 }
 
 li{
+
     padding: 0.5rem;
     min-width: 10rem;
     display: flex;
@@ -110,17 +123,20 @@ li{
     margin-top: 10px;
     justify-content: space-between;
     align-items: center;
+
     transition: 0.2s;
 
 
 }
+
 li:hover{
+
     transform: translateY(-3px) scale(1.01);
     background-color: rgb(255, 198, 216);
 
 
-}
 
+}
 #task-btn:hover{
 
     background-color: rgb(193, 0, 180);
@@ -134,13 +150,24 @@ li:hover{
 
 
 }
+
 #task-btn:active{
-transform: scale(95%);
+
+    transform: scale(95%);
 }
+
+
 .completed{
+
     opacity: 0.5;
-    text-decoration: line-through;
+    text-decoration:line-through;
+
     transition: 0.3s;
 
 
 }
+
+
+
+
+
