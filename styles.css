@@ -14,9 +14,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    gap: 2rem;
     padding: 1rem;
     min-height: 100vh;
+    color: rgb(92, 55, 65);
 
 }
 .container{
@@ -67,10 +68,11 @@ body{
 
 
 #task-input{
+
     background-color: rgb(255, 241, 246);
     color: rgb(92, 45, 60);
     padding: 0.5rem;
-    border-radius: 10%;
+    border-radius: 2rem;
     margin-top: 5vh;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     border:0cap;
@@ -169,5 +171,81 @@ li:hover{
 
 
 
+#pomodoro{
+    background-color: rgb(255, 183, 207);
+    
+    height: 15rem;
+    width: 15rem;
+    
+    font-size: 1.5rem;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    font-family: Fredoka;
 
 
+}
+#timer{
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-weight: bold;    
+    color: rgb(110, 40, 65);
+    background-color: rgb(255, 232, 236);
+    border-radius: 2rem;
+}
+#start-btn{
+    background-color: rgb(226, 103, 143);
+    color: rgb(255, 179, 247);
+
+    padding: 0.5rem;
+    
+    border-radius: 7%;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    font-family: Fredoka;
+    border: 0cap;
+    transition: 0.2;
+
+}
+#reset-btn{
+    background-color: rgb(226, 103, 143);
+    color: rgb(255, 179, 247);
+
+    padding: 0.5rem;
+    
+    border-radius: 7%;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    font-family: Fredoka;
+    border: 0cap;
+    transition: 0.2;
+
+}
+#start-btn:hover{
+
+    transform: scale(1.01);
+    background-color: rgb(202, 76, 119)
+
+}
+#start-btn:active{
+
+        transform: scale(95%);
+
+
+}
+
+#reset-btn:hover{
+
+    transform: scale(1.01);
+    background-color: rgb(202, 76, 119)
+
+}
+#reset-btn:active{
+
+        transform: scale(95%);
+
+
+}

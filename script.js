@@ -1,6 +1,16 @@
 const inputBox = document.getElementById("task-input");
 const inputButton = document.getElementById("task-btn");
 const taskList = document.getElementById("task-list");
+const pomodoroContainer = document.getElementById("pomodoro");
+const timerDisplay = document.getElementById("timer");
+const startButton = document.getElementById("start-btn");
+const resetButton = document.getElementById("reset-btn");
+let timeLeft = 1500;
+let interval;
+
+
+
+
 
 inputButton.addEventListener("click",addTask);
 
@@ -25,7 +35,6 @@ function addTask(){
     taskList.appendChild(task);
 
     taskTextElement.addEventListener("click", completeTask)
-    inputBox.addEventListener("keydown")
 
     inputBox.value = "";
 
@@ -33,6 +42,8 @@ function addTask(){
     deleteButton.textContent = "x";
 
  
+
+
 
     deleteButton.classList.add("deleteButton");
 
@@ -43,6 +54,7 @@ function addTask(){
     }
 
 } 
+
 
 
 
@@ -66,5 +78,56 @@ function completeTask(e){
    
 }
 
+
+
+startButton.addEventListener("click", timerStart);
+
+function timerStart(){
+
+    if (interval){
+        clearInterval(interval);
+        interval = null
+        startButton.textContent = "Start";
+
+
+
+    }
+    else{
+
+        interval = setInterval(() => {
+        timeLeft--;
+        
+        updateDisplay();
+    
+    
+    }, 1000);
+    startButton.textContent= ("Stop");
+    }
+        
+
+
+    
+}
+
+
+resetButton.addEventListener("click", resetTimer);
+function resetTimer(){
+    clearInterval(interval);
+    timeLeft = 1500;
+    
+    updateDisplay();
+
+
+}
+function updateDisplay(){
+
+        const minutes = Math.floor(timeLeft/60);
+        const seconds = timeLeft % 60;
+        const formattedSeconds = seconds.toString().padStart(2, "0");
+        const formattedMinutes = minutes.toString().padStart(2, "0");
+        timerDisplay.textContent = formattedMinutes + ":" + formattedSeconds;
+
+
+}
 
 
