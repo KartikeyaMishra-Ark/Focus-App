@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("task-input");
 const inputButton = document.getElementById("task-btn");
 const taskList = document.getElementById("task-list");
+
 const pomodoroContainer = document.getElementById("pomodoro");
 const timerDisplay = document.getElementById("timer");
 const startButton = document.getElementById("start-btn");
@@ -34,7 +35,7 @@ function addTask(){
     task.appendChild(taskTextElement);
     taskList.appendChild(task);
 
-    taskTextElement.addEventListener("click", completeTask)
+    task.addEventListener("click", completeTask)
 
     inputBox.value = "";
 
@@ -69,10 +70,17 @@ function deleteTask(event){
 
 function completeTask(e){
 
-    
+    if (e.target.classList.contains("deleteButton")){
+        return;
 
+
+    }
+
+    const taskText = e.currentTarget.querySelector("span")
+    taskText.classList.toggle("completed")
     
-        e.target.classList.toggle("completed")
+    
+    
 
 
    
@@ -86,7 +94,7 @@ function timerStart(){
 
     if (interval){
         clearInterval(interval);
-        interval = null
+        interval = null;
         startButton.textContent = "Start";
 
 
@@ -112,7 +120,11 @@ function timerStart(){
 
 resetButton.addEventListener("click", resetTimer);
 function resetTimer(){
+
     clearInterval(interval);
+
+    interval = null;
+
     timeLeft = 1500;
     
     updateDisplay();
@@ -124,10 +136,13 @@ function updateDisplay(){
         const minutes = Math.floor(timeLeft/60);
         const seconds = timeLeft % 60;
         const formattedSeconds = seconds.toString().padStart(2, "0");
+
+
         const formattedMinutes = minutes.toString().padStart(2, "0");
         timerDisplay.textContent = formattedMinutes + ":" + formattedSeconds;
 
 
 }
+
 
 

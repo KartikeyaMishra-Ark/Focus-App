@@ -160,10 +160,9 @@ li:hover{
 
 
 .completed{
-
+    
     opacity: 0.5;
     text-decoration:line-through;
-
     transition: 0.3s;
 
 
@@ -205,11 +204,12 @@ li:hover{
     margin-bottom: 1vh;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     font-family: Fredoka;
-    border: 0cap;
+    border: 0cap; 
     transition: 0.2;
 
 }
 #reset-btn{
+    
     background-color: rgb(226, 103, 143);
     color: rgb(255, 179, 247);
 
