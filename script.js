@@ -6,7 +6,9 @@ const pomodoroContainer = document.getElementById("pomodoro");
 const timerDisplay = document.getElementById("timer");
 const startButton = document.getElementById("start-btn");
 const resetButton = document.getElementById("reset-btn");
+
 let timeLeft = 1500;
+
 let interval;
 
 
@@ -88,6 +90,7 @@ function completeTask(e){
 
 
 
+
 startButton.addEventListener("click", timerStart);
 
 function timerStart(){
@@ -114,11 +117,13 @@ function timerStart(){
         
 
 
-    
+                     
 }
 
 
+
 resetButton.addEventListener("click", resetTimer);
+
 function resetTimer(){
 
     clearInterval(interval);
@@ -133,7 +138,9 @@ function resetTimer(){
 }
 function updateDisplay(){
 
-        const minutes = Math.floor(timeLeft/60);
+    
+    const minutes = Math.floor(timeLeft/60);
+        
         const seconds = timeLeft % 60;
         const formattedSeconds = seconds.toString().padStart(2, "0");
 
@@ -143,6 +150,22 @@ function updateDisplay(){
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
 
 
 
