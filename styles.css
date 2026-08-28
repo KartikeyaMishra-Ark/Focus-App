@@ -249,3 +249,96 @@ li:hover{
 
 
 }
+
+
+#WeatherDisplay {
+    background-color: rgb(255, 183, 207);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: Fredoka;
+    color: rgb(92, 55, 65);
+    
+    width: 20rem;
+    min-height: 15rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    
+}
+
+#WeatherDisplay h2 {
+
+    margin-bottom: 1rem;
+}
+
+.weather-search {
+
+
+    display: flex;
+    gap: 0.5rem;
+}
+
+#city-input {
+    
+    flex: 1;
+
+    padding: 0.5rem;
+    
+    background-color: rgb(255, 241, 246);
+    color: rgb(92, 45, 60);
+
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+
+#weather-btn {
+
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 1rem;
+
+
+    background-color: rgb(226, 103, 143);
+    color: white;
+    font-family: Fredoka;
+    cursor: pointer;
+}
+
+#weather-btn:hover {
+
+    transform: scale(1.03);
+    background-color: rgb(202, 76, 119);
+}
+
+#city-name {
+
+    margin-top: 1.5rem;
+
+    font-size: 1.4rem;
+}
+
+#temperature {
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: rgb(110, 40, 65);
+    margin-top: 0.5rem;
+    
+}
+
+#condition {
+    font-size: 1.1rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+#weather-error {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+}
+
+
