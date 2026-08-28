@@ -23,7 +23,7 @@ let timeLeft = 1500;
 let interval;
 
 
-
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 
 inputButton.addEventListener("click",addTask);
@@ -70,11 +70,56 @@ function addTask(){
 
     
     task.appendChild(deleteButton);
+
     deleteButton.addEventListener("click", deleteTask);
 
+
+    tasks.push({
+        text:taskText,
+        completed: false    
+
+    });
     }
 
+
+    
+
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+
 } 
+
+
+function loadTasks(){
+    tasks.forEach(function(taskData){
+        const task = document.createElement("li")
+
+        const taskTextElement = document.createElement("span")
+        taskTextElement.textContent=taskData.text;
+        task.appendChild(taskTextElement);
+        taskList.appendChild(task);
+
+
+        task.addEventListener("click", completeTask)
+        const deleteButton=document.createElement("button");
+        deleteButton.classList.add("deleteButton");
+        deleteButton.textContent = "x";
+        task.appendChild(deleteButton);
+        deleteButton.addEventListener("click", deleteTask);
+
+        if(taskData.completed){
+            taskTextElement.classList.add("completed");
+
+
+        }
+    })
+
+
+}
+loadTasks();
+
+
+
+
 
 
 
@@ -85,7 +130,18 @@ function deleteTask(event){
 
     taskList.removeChild(li);
 
+    const taskText = li.querySelector("span").textContent;
+
+    tasks = tasks.filter(function(task){
+        return task.text !== taskText
+
+    })
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+
+
 }
+
 
 
 function completeTask(e){
@@ -98,7 +154,16 @@ function completeTask(e){
 
     const taskText = e.currentTarget.querySelector("span")
     taskText.classList.toggle("completed")
-    
+    const task = tasks.find(function(task){
+        return task.text === taskText.textContent;
+
+
+
+
+
+    });
+    task.completed = taskText.classList.contains("completed");
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     
     
 
@@ -295,6 +360,7 @@ cityInput.addEventListener("keydown", function(event) {
 
 });
 fetchWeather("Tokyo");
+
 
 
 
