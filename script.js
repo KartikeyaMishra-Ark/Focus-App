@@ -13,8 +13,53 @@ const temperature = document.getElementById("temperature");
 const condition = document.getElementById("condition");
 const humidity = document.getElementById("Humidity");
 const wind = document.getElementById("Wind");
+
 const weatherError = document.getElementById("weather-error");
 
+const petalsContainer = document.getElementById("petals");
+
+
+function Petal(){
+
+    
+
+    const petal = document.createElement("div");
+
+    petal.classList.add("petal");
+
+    
+    petal.style.left = (Math.random() * 55 + 45) + "vw";
+
+    petal.style.animationDuration =
+
+        Math.random() * 5 + 7 + "s";
+
+    petal.style.width =
+
+        Math.random() * 8 + 8 + "px";
+
+    petal.style.height =
+        Math.random() *  5 + 6 + "px";
+
+        
+    petal.style.opacity =
+        Math.random() * 0.4 + 0.4;
+
+
+    petalsContainer.appendChild(petal);
+
+    petal.style.setProperty(
+    "--drift",
+    (Math.random() * 300 + 150) + "px"
+    );
+
+    setTimeout(() => {
+        petal.remove();
+    }, 13000);
+
+}
+
+setInterval(Petal, 400);
 
 
 
@@ -31,6 +76,7 @@ inputButton.addEventListener("click",addTask);
 
 inputBox.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
+
         addTask();
     }
 });
@@ -54,6 +100,7 @@ function addTask(){
 
     task.appendChild(taskTextElement);
     taskList.appendChild(task);
+
 
     task.addEventListener("click", completeTask)
 
@@ -96,6 +143,7 @@ function loadTasks(){
         const taskTextElement = document.createElement("span")
         taskTextElement.textContent=taskData.text;
         task.appendChild(taskTextElement);
+
         taskList.appendChild(task);
 
 
@@ -103,6 +151,7 @@ function loadTasks(){
         const deleteButton=document.createElement("button");
         deleteButton.classList.add("deleteButton");
         deleteButton.textContent = "x";
+        
         task.appendChild(deleteButton);
         deleteButton.addEventListener("click", deleteTask);
 
@@ -222,7 +271,9 @@ function resetTimer(){
 
 
 }
+
 function updateDisplay(){
+
 
     
     const minutes = Math.floor(timeLeft/60);
@@ -354,7 +405,10 @@ function getWeatherCondition(code) {
 
 
 }
+
+
 cityInput.addEventListener("keydown", function(event) {
+
 
     if (event.key === "Enter") {
         fetchWeather();
