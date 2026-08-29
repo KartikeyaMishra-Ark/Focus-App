@@ -300,8 +300,10 @@ async function fetchWeather(defaultCity) {
 
         weatherError.textContent = "Something went wrong. Try again.";
 
+
         console.error(error);
 
+        
     }
 }
 
@@ -359,6 +361,7 @@ cityInput.addEventListener("keydown", function(event) {
     }
 
 });
+
 fetchWeather("Tokyo");
 
 
