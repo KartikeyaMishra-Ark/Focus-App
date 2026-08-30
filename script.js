@@ -18,6 +18,22 @@ const weatherError = document.getElementById("weather-error");
 
 const petalsContainer = document.getElementById("petals");
 
+const music = document.getElementById("music");
+const musicButton = document.getElementById("music-btn");
+const musicSelect = document.getElementById("music-select");
+
+
+const volumeCtrl = document.getElementById("volume-ctrl");
+
+music.volume = 0.5;
+volumeCtrl.addEventListener("input", function(){
+
+    music.volume= volumeCtrl.value;
+
+
+});
+
+
 
 function Petal(){
 
@@ -80,6 +96,10 @@ inputBox.addEventListener("keydown", function(event) {
         addTask();
     }
 });
+
+
+
+music.src = musicSelect.value;
 
 
 
@@ -415,6 +435,52 @@ cityInput.addEventListener("keydown", function(event) {
     }
 
 });
+
+
+
+musicButton.addEventListener("click", function(){
+
+    if(music.paused){
+
+
+        music.play();
+        musicButton.textContent = "Pause";
+
+    }
+
+    else{
+        music.pause();
+        musicButton.textContent = "Play";
+
+
+
+    }
+
+
+});
+
+musicSelect.addEventListener("change", function(){
+
+    music.src = musicSelect.value;
+    music.play();
+    musicButton.textContent = "Pause";
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 fetchWeather("Tokyo");
 
