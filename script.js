@@ -23,12 +23,148 @@ const musicButton = document.getElementById("music-btn");
 const musicSelect = document.getElementById("music-select");
 
 
-const volumeCtrl = document.getElementById("volume-ctrl");
+const songName = document.getElementById("song-name");
+
+const volumeControl = document.getElementById("volume-control");
+
+const songProgress = document.getElementById("song-progress");
+
+
+
+const locationButton = document.getElementById("location-btn");
+
+
+locationButton.addEventListener("click", getLocation);
+
+
+
+
+
+function getLocation(){
+
+    if(!navigator.geolocation){
+
+        fetchWeather("Tokyo");
+        return;
+
+    }
+
+    weatherError.textContent = "Getting your location...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position){
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            fetchWeatherByLocation(latitude, longitude);
+
+        },
+
+        function(){
+
+            fetchWeather("Tokyo");
+
+        }
+
+    );
+}
+
+
+
+
+async function fetchWeatherByLocation(latitude, longitude){
+
+    try{
+
+        weatherError.textContent = "Loading...";
+
+        const weatherResponse = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=auto`
+        );
+
+
+
+
+        const weather = await weatherResponse.json();
+
+        temperature.textContent =
+            Math.round(weather.current.temperature_2m) + "°C";
+
+        humidity.textContent =
+            weather.current.relative_humidity_2m;
+
+        wind.textContent =
+            Math.round(weather.current.wind_speed_10m);
+
+        condition.textContent =
+            getWeatherCondition(weather.current.weather_code);
+
+
+    
+        const locationResponse = await fetch(
+            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+        );
+
+        const locationData = await locationResponse.json();
+
+        cityName.textContent =
+            locationData.city ||
+            locationData.locality ||
+
+
+            locationData.principalSubdivision ||
+            "Your Location";
+
+        weatherError.textContent = "";
+
+    }
+
+
+
+    catch(error){
+
+        weatherError.textContent =
+            "Couldn't get your weather.";
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+
+
+
+music.addEventListener("loadedmetadata", function(){
+
+    songProgress.max = music.duration;
+    songProgress.value = 0;
+
+});
+
+music.addEventListener("timeupdate", function(){
+
+    songProgress.value = music.currentTime;
+
+});
+
+songProgress.addEventListener("input", function(){
+
+    music.currentTime = Number(songProgress.value);
+
+
+});
+
+
 
 music.volume = 0.5;
-volumeCtrl.addEventListener("input", function(){
+volumeControl.addEventListener("input", function(){
 
-    music.volume= volumeCtrl.value;
+    music.volume= volumeControl.value;
 
 
 });
@@ -116,7 +252,7 @@ function addTask(){
 
     const taskTextElement = document.createElement("span");
     taskTextElement.textContent = taskText;
-
+        
 
     task.appendChild(taskTextElement);
     taskList.appendChild(task);
@@ -124,7 +260,7 @@ function addTask(){
 
     task.addEventListener("click", completeTask)
 
-    inputBox.value = "";
+    inputBox.value = "";            
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "x";
@@ -202,6 +338,7 @@ function deleteTask(event){
     const taskText = li.querySelector("span").textContent;
 
     tasks = tasks.filter(function(task){
+
         return task.text !== taskText
 
     })
@@ -224,7 +361,7 @@ function completeTask(e){
     const taskText = e.currentTarget.querySelector("span")
     taskText.classList.toggle("completed")
     const task = tasks.find(function(task){
-        return task.text === taskText.textContent;
+        return task.text === taskText.textContent ;
 
 
 
@@ -265,6 +402,7 @@ function timerStart(){
     
     
     }, 1000);
+
     startButton.textContent= ("Stop");
     }
         
@@ -386,6 +524,7 @@ function getWeatherCondition(code) {
 
     if (code === 0) {
 
+
         return "Clear sky"
 
     }
@@ -393,16 +532,21 @@ function getWeatherCondition(code) {
 
 
     if (code === 1 || code=== 2 || code=== 3) {
+
         return "Cloudy"
 
     }
 
 
-    if (code >= 51 && code<= 67) {
+    if (code >= 51 && code<= 67) 
+        {
 
         return "Rain"
+
     }
-    if (code >= 71 && code<= 77) {
+    if (code >= 71 && code<= 77) 
+        
+        {
 
         return "Snow";
     }
@@ -431,6 +575,7 @@ cityInput.addEventListener("keydown", function(event) {
 
 
     if (event.key === "Enter") {
+
         fetchWeather();
     }
 
@@ -438,19 +583,23 @@ cityInput.addEventListener("keydown", function(event) {
 
 
 
+
 musicButton.addEventListener("click", function(){
 
+    console.log("Button clicked");
+    console.log("Audio source:", music.src);
+    console.log("Audio duration:", music.duration);
     if(music.paused){
 
 
         music.play();
-        musicButton.textContent = "Pause";
-
+        musicButton.textContent = "⏸︎";
     }
 
     else{
+
         music.pause();
-        musicButton.textContent = "Play";
+        musicButton.textContent = "▶";
 
 
 
@@ -462,17 +611,20 @@ musicButton.addEventListener("click", function(){
 musicSelect.addEventListener("change", function(){
 
     music.src = musicSelect.value;
+
+    songName.textContent =
+        musicSelect.options[musicSelect.selectedIndex].text;
+
     music.play();
-    musicButton.textContent = "Pause";
 
-
-
+    musicButton.textContent = "Ⅱ";
 
 });
 
 
 
 
+getLocation();
 
 
 
@@ -481,8 +633,6 @@ musicSelect.addEventListener("change", function(){
 
 
 
-
-fetchWeather("Tokyo");
 
 
 

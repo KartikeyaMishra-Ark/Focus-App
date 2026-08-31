@@ -23,104 +23,146 @@
 
     <img src="sakura-tree.svg" class="sakura-tree" alt="">
 
-    <div class="container">
-        <h1>My To-Do List</h1>
-        <div>
-            <input type="text" id="task-input">
-            <button id="task-btn">Add Task</button>
+
+
+
+ 
+    <div id="dashboard"> 
+
+        <div class="container">
+            <h1>My To-Do List</h1>
+            <div>
+                <input type="text" id="task-input">
+                <button id="task-btn">Add Task</button>
+
+
+            </div>
+
+            <ul id="task-list">
+
+            </ul>
+
+            
 
 
         </div>
 
-        <ul id="task-list">
+        <div id="pomodoro">
+            <h2>Pomodoro</h2>
+            <div id="timer">
 
-        </ul>
+                25:00
 
-        
+            </div>
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+
+
+
+        </div>
+
+
+        <div id="WeatherDisplay">
+            <h2>Weather</h2>
+            <div class="search">
+                <input type="text" id="city-input" placeholder="Enter a city">
+                <button id="weather-btn">Search</button>
+                <button id="location-btn" title="Use my location">⌖</button>
+
+
+            </div>
+            <div class="city-heading">
+                <h3 id="city-name">--</h3>
+            </div>
+            <div id="temperature">--</div>
+
+            <p id="condition">--</p>
+
+            <div class="weather-details">
+                <p>Humidity: <span id="Humidity">--</span>%</p>
+
+                <p>Wind: <span id="Wind">--</span> kmph</p>
+
+            </div>
+
+            <p id="weather-error"></p>
+
+            
+
+
+
+        </div>
+
+
 
 
     </div>
 
-    <div id="pomodoro">
-        <h2>Pomodoro</h2>
-        <div id="timer">
-
-            25:00
-
-        </div>
-        <button id="start-btn">Start</button>
-        <button id="reset-btn">Reset</button>
+            
 
 
-
-    </div>
-
-
-    <div id="WeatherDisplay">
-        <h2>Weather</h2>
-        <div class="search">
-            <input type="text" id="city-input" placeholder="Enter a city">
-            <button id="weather-btn">Search</button>
-
-
-        </div>
-        <h3 id="city-name">--</h3>
-        <div id="temperature">--</div>
-
-        <p id="condition">--</p>
-
-        <div class="weather-details">
-            <p>Humidity: <span id="Humidity">--</span>%</p>
-
-            <p>Wind: <span id="Wind">--</span> kmph</p>
-
-        </div>
-
-        <p id="weather-error"></p>
-
-        
-
-
-
-    </div>
-
-
-
+    
 
     <div id="music-player">
-        <h2>Lo-fi</h2>
 
-        <audio id="music" loop></audio>
+            <audio id="music" loop></audio>
+
+        <div class="music-info">
+
+            <div class="music-icon">♫</div>
+
+            <div>
+                <p class="music-label">NOW PLAYING</p>
+                <h3 id="song-name">Lo-fi 1</h3>
+            </div>
+
+        </div>
+
         <select id="music-select">
 
-            <option value="Langston & Hicks - Soft Ground.mp3">Lo-fi 1</option>
-            <option value="Tama & Langston - Watermelon Days.mp3">Lo-fi 2</option>
-            
+            <option value="Langston & Hicks - Soft Ground.mp3">
+                Lo-fi 1
+            </option>
+
+            <option value="Tama & Langston - Watermelon Days.mp3">
+                Lo-fi 2
+            </option>
+
         </select>
 
-        <button id="music-btn">Play
+        <div class="music-controls">
+            <button id="music-btn">▶</button>
 
 
 
+            <input
+            type="range"
+            id="song-progress"
+            min="0"
+            max="100"
+            value="0">
+                    
 
-        </button>
-        <input type="range"
-            id="volume-ctrl"
+            <input
+            type="range"
+            id="volume-control"
             min="0"
             max="1"
             step="0.01"
             value="0.5"
-        
-        
-        
-        >
-        
+            >
+
+        </div>
+
+    
 
 
 
 
 
-    </div>
+
+
+
     
 </body>
 <script src="script.js"></script>

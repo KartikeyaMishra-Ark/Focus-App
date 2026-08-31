@@ -12,32 +12,221 @@
 body{
 
 
-    background: linear-gradient(
-    135deg,
-    rgb(255, 205, 225),
-    rgb(250, 175, 205)
-
-
-
-
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    background-attachment: fixed;
     min-height: 100vh;
+    padding: 3rem;
     color: rgb(92, 55, 65);
     font-family: Fredoka, sans-serif;
 
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(255, 238, 194, 0.8),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(166, 210, 235) 0%,
+            rgb(214, 226, 232) 45%,
+            rgb(255, 210, 205) 100%
+        );
+
+    overflow-x: hidden;
+
+}
+
+
+.dashboard {
+    width: min(1100px, 100%);
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 1.2rem;
+
+    margin: auto;
+}
+
+
+#music-player{
+
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+
+    width: 340px;
+    padding: 1rem 1.1rem;
+
+    background: rgba(255, 248, 251, 0.88);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.65);
+    border-radius: 1.2rem;
+
+    box-shadow:
+        0 15px 40px rgba(70, 50, 70, 0.16);
+
+    z-index: 5;
 
 
 }
 
 
+.music-info{
 
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+}
+
+.music-icon{
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    background: rgb(255, 210, 225);
+    color: rgb(202, 76, 119);
+
+    font-size: 1.5rem;
+
+}
+
+.music-label{
+
+    font-size: 0.65rem;
+
+    letter-spacing: 1px;
+
+    opacity: 0.55;
+
+}
+
+#song-name{
+
+    font-size: 1rem;
+
+    color: rgb(92, 45, 60);
+
+}
+
+#music-select{
+
+    appearance: none;
+    width: 100%;
+    margin-top: 1rem;
+
+    padding: 0.6rem 0.8rem;
+    border: none;
+
+
+    border-radius: 0.8rem;
+    background: rgb(255, 235, 242);
+    color: rgb(92, 45, 60);
+
+    font-family: Fredoka, sans-serif;
+    cursor: pointer;
+}
+
+.music-controls{
+
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    grid-template-rows: auto auto;
+
+    gap: 0.6rem 0.8rem;
+    margin-top: 0.9rem;
+
+}
+
+#music-btn{
+
+    width: 42px;
+    height: 42px;
+
+    grid-row: span 2;
+
+    border: none;
+    border-radius: 50%;
+
+
+    background: rgb(226, 103, 143);
+    color: white;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+
+}
+
+#music-btn:hover{
+
+    transform: scale(1.08);
+
+}
+
+#volume-control{
+
+    width: 55px;
+    height: 3px;
+
+    justify-self: end;
+
+    accent-color: rgb(226, 103, 143);
+
+}
+
+#song-progress{
+
+    width: 100%;
+    height: 4px;
+    accent-color: rgb(226, 103, 143);
+    cursor: pointer;
+
+
+}
+
+.city-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#location-btn{
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgb(255, 225, 237);
+    color: rgb(202, 76, 119);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: 0.2s;
+}
+
+#location-btn:hover{
+    transform: scale(1.1);
+    background: rgb(255, 210, 227);
+}
 
 #petals{
+
     position: fixed;
     inset: 0;
     pointer-events: none;
@@ -49,6 +238,7 @@ body{
 }
 
 .petal{
+
     position: absolute;
     top: -20px;
     width: 12px;
@@ -64,6 +254,7 @@ body{
 @keyframes sakuraWind{
 
     0%{
+
         transform: translate(0, -20px) rotate(0deg);
     }
 
@@ -83,6 +274,7 @@ body{
     right: -1100px;
     bottom: -320px;
     z-index: -1;
+
     pointer-events: none;
 
 
@@ -97,15 +289,16 @@ body{
 #pomodoro,
 #WeatherDisplay{
 
-    flex-shrink: 0;
+    
     position: relative;
     z-index: 2;
 }
 
 
 @media (max-width: 900px){
-    body{
-        flex-wrap: wrap;
+    #dashboard{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 }
 
@@ -114,6 +307,15 @@ body{
 
 
 .container{
+
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 100%;
+    min-height: 420px;
+
+
+
     padding: 1.5rem;
 
     box-shadow:
@@ -122,7 +324,7 @@ body{
 
     background: rgba(255, 248, 251, 0.9);
     border-radius: 1.5rem;
-    min-height: 10rem;
+    
     border: 1px solid rgba(255, 255, 255, 0.7);
 
 
@@ -277,6 +479,7 @@ li:hover{
 
 
 }
+
 #task-btn:hover{
 
     background-color: rgb(193, 0, 180);
@@ -285,6 +488,7 @@ li:hover{
 
 
 }
+
 #task-btn:hover{
     transform: scale(1.01);
     background-color: rgb(202, 76, 119)
@@ -310,21 +514,25 @@ li:hover{
 
 
 #pomodoro{
+    grid-column: 2;
+    grid-row: 1;
     padding: 1.5rem;
     border-radius: 1.5rem;
     text-align: center;
+
     font-family: Fredoka, sans-serif;
 
     border: 1px solid rgba(255, 255, 255, 0.8);
 
     box-shadow:
+
         0 10px 30px rgba(120, 50, 80, 0.12),
         0 2px 8px rgba(120, 50, 80, 0.06);
 
 
     background: rgba(255, 242, 247, 0.95);
     height: 15rem;
-    width: 15rem;
+    width: 100%;
 
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
@@ -349,7 +557,8 @@ li:hover{
 
     font-size: 3rem;
     margin-top: 1rem;
-    font-weight: bold;    
+    font-weight: bold;   
+
     color  : rgb(110, 40, 65);
     background-color: rgb(255, 232, 236);
 
@@ -367,12 +576,12 @@ li:hover{
     padding: 0.5rem;
     
     border-radius: 7%;
-    margin-top: 5vh;
+    margin-top: 1rem;
 
     margin-bottom: 1vh;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     font-family: Fredoka;
-    border: 0cap; 
+    border: none; 
 
     transition: 0.2s;
      
@@ -431,14 +640,19 @@ li:hover{
 
 
 #WeatherDisplay {
+    grid-column: 2;
+    grid-row: 2;
     background: rgba(248, 247, 255, 0.9);
     box-shadow:
         0 10px 30px rgba(120, 50, 80, 0.12),
         0 2px 8px rgba(120, 50, 80, 0.06);    
     text-align: center;
+
     font-family: Fredoka, sans-serif;
     color: rgb(92, 55, 65);
-    width: 20rem;
+
+    width: 100%;
+
     min-height: 15rem;
     padding: 1.5rem;
 
@@ -464,11 +678,11 @@ li:hover{
 }
 
 
-.weather-search {
+.search {
 
 
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 #city-input {
@@ -482,6 +696,8 @@ li:hover{
 
     outline: none;
     border: none;
+    min-width: 0;
+
     border-radius: 2rem;
 }
 
@@ -508,7 +724,7 @@ li:hover{
 #weather-btn:hover {
 
 
-    transform: scale(1.03);
+    transform: scale(1.0f3);
     background-color: rgb(202, 76, 119);
 
 }
@@ -529,7 +745,9 @@ li:hover{
 
 #temperature {
 
+
     font-size: 3rem;
+
     font-weight: bold;
 
 
@@ -553,9 +771,9 @@ li:hover{
 
 
     display: flex;
-
-    justify-content: space-around;
-    margin-top: 1rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 
 
 }
@@ -581,6 +799,7 @@ li:hover{
 
 
     bottom: 8px;
+
     left: 50%;
     transform: translateX(-50%);
     
@@ -593,6 +812,7 @@ li:hover{
 .credits a{
     color: rgb(92, 55, 65);
     text-decoration: none;
+
     opacity: 0.6;
 }
 
@@ -601,3 +821,310 @@ li:hover{
     text-decoration: underline;
 }
 
+
+
+
+
+body {
+
+
+    display: block;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+
+    background-attachment: fixed;
+}
+
+#dashboard {
+
+
+    width: min(1100px, calc(100% - 4rem));
+    margin: 3rem auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 1.2rem;
+}
+
+.container {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+#pomodoro {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#WeatherDisplay {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(255, 238, 194, 0.8),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(166, 210, 235) 0%,
+            rgb(214, 226, 232) 45%,
+            rgb(255, 210, 205) 100%
+        );
+}
+
+
+body {
+
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+#dashboard {
+
+    width: min(760px, calc(100vw - 3rem));
+    display: grid;
+    grid-template-columns: 420px 260px;
+    gap: 1rem;
+    margin: auto;
+    align-items: start;
+}
+
+.container {
+
+
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 440px;
+    height: auto;
+}
+
+
+#dashboard > * {
+
+
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+
+
+
+#WeatherDisplay {
+
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 1.2rem;
+}
+
+#WeatherDisplay h2 {
+
+    margin-bottom: 0.7rem;
+}
+
+#city-name {
+
+    margin-top: 0.8rem;
+}
+
+#temperature {
+
+    font-size: 2.5rem;
+
+    margin-top: 0.2rem;
+}
+
+#condition {
+
+    font-size: 1rem;
+}
+
+.weather-details {
+
+
+    margin-top: 0.7rem;
+}
+
+#weather-error {
+
+    margin-top: 0.4rem;
+    overflow-wrap: anywhere;
+}
+
+
+
+.container {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 100%;
+
+
+    height: 467px;
+    padding: 1.8rem;
+}
+
+
+
+
+#pomodoro {
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 100%;
+    height: 170px;
+
+
+}
+
+
+
+
+#WeatherDisplay {
+
+
+
+
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+
+
+    min-height: 270px;
+    height: auto;
+}
+
+
+
+
+#task-input {
+    width: 65%;
+
+
+
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+}
+
+
+
+#task-btn {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+}
+
+
+
+#pomodoro {
+    height: 190px;
+}
+
+
+#start-btn,
+
+#reset-btn {
+    margin-top: 0.5rem;
+}
+
+
+
+#dashboard {
+
+
+    row-gap: 0.3rem;
+
+    grid-template-rows: 190px auto;
+}
+
+#WeatherDisplay {
+    margin-top: 0;
+
+}
+
+
+#task-list {
+
+
+
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+}
+
+
+#task-list::-webkit-scrollbar{
+
+
+    display: none;
+}
+
+
+#task-input {
+
+    width: 65%;
+
+    margin-top: 3vh;
+    margin-bottom: 0;
+}
+
+#task-btn {
+
+    margin-top: 3vh;
+    margin-bottom: 0;
+
+    padding: 0.7rem 1rem;
+}
+
+#task-list li {
+
+
+    padding: 0.7rem 1rem;
+    margin-top: 0.6rem;
+
+    border-radius: 0.8rem;
+}
+
+
+
+
+.deleteButton {
+
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    
+    font-size: 1rem;
+    flex-shrink: 0;
+
+
+}
+
+.deleteButton:hover {
+
+
+    background-color: rgb(239, 143, 170);
+    color: rgb(80, 25, 45);
+
+
+}
