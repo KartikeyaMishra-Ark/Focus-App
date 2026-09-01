@@ -134,6 +134,10 @@ Everything listed below is something i used for the first time and had to learn 
 - Handling API failures gracefully
 
 
+# AI Declaration
+AI has been used to learn all the concepts mentioned above as they were new to me and I use AI as a teacher to learn them all.
+
+
 # Future Improvements
 
 - Calendar
@@ -156,6 +160,7 @@ Everything listed below is something i used for the first time and had to learn 
 Weather data provided by Open-Meteo.
 
 <div align="center">
+
 
 # Built while learning HTML, CSS & JavaScript
 
