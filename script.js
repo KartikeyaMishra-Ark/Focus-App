@@ -593,7 +593,7 @@ musicButton.addEventListener("click", function(){
 
 
         music.play();
-        musicButton.textContent = "⏸";
+        musicButton.textContent = "❚❚";
     }
 
     else{
@@ -617,7 +617,7 @@ musicSelect.addEventListener("change", function(){
 
     music.play();
 
-    musicButton.textContent = "⏸";
+    musicButton.textContent = "❚❚";
 
 });
 
