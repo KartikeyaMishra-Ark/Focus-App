@@ -371,6 +371,7 @@ body{
     transform: scale(1.1);
     background-color: rgb(239, 143, 170);
 
+
 }
 
 
@@ -464,6 +465,7 @@ li{
     background-color: rgb(255, 218, 230);
     margin-top: 10px;
     justify-content: space-between;
+
     align-items: center;
 
     transition: 0.2s;
@@ -544,6 +546,7 @@ li:hover{
 
 
 #pomodoro:hover{
+
     transform: translateY(-4px);
     box-shadow: 0 16px 35px rgba(120, 50, 80, 0.15), 0 4px 10px rgba(120, 50, 80, 0.08);
     
@@ -772,7 +775,7 @@ li:hover{
 
     display: flex;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.5rem; 
     flex-wrap: wrap;
 
 
@@ -850,6 +853,7 @@ body {
 }
 
 .container {
+
     grid-column: 1;
     grid-row: 1 / 3;
 }
@@ -857,11 +861,14 @@ body {
 #pomodoro {
     grid-column: 2;
     grid-row: 1;
+
 }
 
 #WeatherDisplay {
+
     grid-column: 2;
     grid-row: 2;
+
 }
 
 
@@ -889,6 +896,7 @@ body::before {
 
 body {
 
+
     min-height: 100vh;
     margin: 0;
     overflow-x: hidden;
@@ -903,6 +911,7 @@ body {
     gap: 1rem;
     margin: auto;
     align-items: start;
+
 }
 
 .container {
@@ -912,6 +921,7 @@ body {
     grid-row: 1;
     min-height: 440px;
     height: auto;
+
 }
 
 
@@ -935,6 +945,7 @@ body {
     min-height: 0;
     height: 100%;
     padding: 1.2rem;
+
 }
 
 #WeatherDisplay h2 {
@@ -949,12 +960,16 @@ body {
 
 #temperature {
 
+
     font-size: 2.5rem;
 
     margin-top: 0.2rem;
+
 }
 
 #condition {
+
+
 
     font-size: 1rem;
 }
@@ -987,6 +1002,7 @@ body {
 
 
 #pomodoro {
+
     grid-column: 2;
     grid-row: 1;
 
@@ -1011,6 +1027,7 @@ body {
 
     min-height: 270px;
     height: auto;
+
 }
 
 
@@ -1028,8 +1045,10 @@ body {
 
 
 #task-btn {
+
     padding: 0.7rem 1rem;
     font-size: 1rem;
+
 }
 
 
@@ -1042,6 +1061,7 @@ body {
 #start-btn,
 
 #reset-btn {
+
     margin-top: 0.5rem;
 }
 
@@ -1056,7 +1076,9 @@ body {
 }
 
 #WeatherDisplay {
+
     margin-top: 0;
+
 
 }
 
@@ -1126,5 +1148,714 @@ body {
     background-color: rgb(239, 143, 170);
     color: rgb(80, 25, 45);
 
+
+}
+
+
+
+
+#timer {
+
+
+    padding: 0.4rem 0.8rem;
+
+    margin-top: 0.7rem;
+    font-size: 2.7rem;
+
+
+}
+
+
+#start-btn,
+#reset-btn {
+
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    padding: 0.5rem 0.9rem;
+
+}
+
+
+
+#start-btn {
+    margin-right: 0.3rem;
+
+}
+
+
+
+#city-name {
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+
+#temperature {
+
+    font-size: 2.8rem;
+    margin-top: 0.3rem;
+
+
+
+}
+
+
+
+#condition {
+
+    margin-top: 0.2rem;
+    opacity: 0.75;
+}
+
+
+
+.weather-details {
+
+
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+
+    border-top: 1px solid rgba(202, 76, 119, 0.15);
+}
+
+
+
+
+
+
+#task-btn,
+#start-btn,
+#reset-btn,
+#music-btn {
+
+
+    background-color: rgba(255, 248, 251,);
+}
+
+
+
+
+
+.container {
+
+    background: rgba(255, 244, 248, 0.94);
+}
+
+
+
+#pomodoro {
+
+    background: rgba(255, 232, 240, 0.94);
+}
+
+
+
+#WeatherDisplay {
+
+
+    background: rgba(242, 239, 250, 0.94);
+}
+
+
+
+
+#music-player {
+    background: rgba(255, 239, 245, 0.94);
+
+
+}
+
+
+#city-input {
+
+    background-color: rgb(248, 247, 255);
+
+
+}
+
+
+
+
+.container h1,
+
+
+#pomodoro h2,
+
+
+
+#WeatherDisplay h2 {
+
+    color: rgb(110, 40, 65);
+    font-weight: 600;
+}
+
+.container h1 {
+    font-size: 1.8rem;
+}
+
+#pomodoro h2,
+#WeatherDisplay h2 {
+
+    font-size: 1.3rem;
+}
+
+
+.container,
+#pomodoro,
+#WeatherDisplay {
+
+    padding: 1.5rem;
+}
+
+
+.container h1,
+#pomodoro h2,
+#WeatherDisplay h2 {
+    margin-bottom: 1rem;
+}
+
+
+.container,
+#pomodoro,
+#WeatherDisplay {
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 25px rgba(120, 50, 80, 0.10);
+
+}
+
+
+.container:hover,
+#pomodoro:hover,
+#WeatherDisplay:hover {
+    transform: translateY(-3px);
+}
+
+
+
+
+body {
+
+    min-height: 100vh;
+    margin: 0;
+
+    overflow-x: hidden;
+    background: rgb(214, 230, 238);
+
+}
+
+body::before {
+
+
+
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 72% 18%,
+            rgba(255, 238, 194, 0.9),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(255, 255, 255, 0.55),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(166, 210, 235) 0%,
+            rgb(214, 226, 232) 48%,
+            rgb(255, 210, 205) 100%
+        );
+}
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap');
+
+body {
+
+
+    min-height: 100vh;
+
+    padding: 2.5rem 1.5rem 7rem;
+    overflow-x: hidden;
+
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 239, 246, 0.9),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(235, 225, 250, 0.8),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            rgb(239, 233, 246) 0%,
+            rgb(250, 241, 244) 50%,
+            rgb(238, 226, 239) 100%
+        );
+}
+
+#dashboard {
+
+
+
+    width: min(850px, calc(100vw - 3rem));
+    margin: 2rem auto 0;
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 270px;
+    grid-template-rows: 190px 275px;
+    gap: 0.9rem;
+    align-items: stretch;
+}
+
+.container,
+#pomodoro,
+#WeatherDisplay {
+
+    width: 100%;
+    min-width: 0;
+
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 12px 35px rgba(91, 60, 90, 0.10),
+        0 3px 10px rgba(91, 60, 90, 0.05);
+    backdrop-filter: blur(14px);
+}
+
+.container {
+
+
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    height: 480px;
+    padding: 1.7rem;
+    background: rgba(255, 248, 251, 0.88);
+    border-radius: 1.5rem;
+}
+
+.container h1 {
+
+    
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+    color: rgb(110, 40, 65);
+}
+
+#task-input {
+
+
+    width: 65%;
+    height: 42px;
+    padding: 0.7rem 1rem;
+    margin: 1.2rem 0 0;
+
+
+    border: 1px solid rgba(202, 76, 119, 0.12);
+    border-radius: 2rem;
+    background: rgba(248, 247, 255, 0.95);
+    color: rgb(92, 45, 60);
+    font-family: Fredoka, sans-serif;
+    font-size: 1rem;
+}
+
+#task-btn {
+
+
+    height: 42px;
+    padding: 0.7rem 1rem;
+    margin: 1.2rem 0 0 0.25rem;
+    border: none;
+
+
+    border-radius: 0.9rem;
+    background: rgb(202, 76, 119);
+    color: white;
+    font-family: Fredoka, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+#task-btn:hover,
+#start-btn:hover,
+#reset-btn:hover,
+#weather-btn:hover {
+    background: rgb(176, 58, 99);
+}
+
+#task-list {
+
+
+    max-height: 300px;
+    margin-top: 0.8rem;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+}
+
+#task-list::-webkit-scrollbar {
+
+
+    display: none;
+}
+
+#task-list li {
+
+
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 1rem;
+
+
+    margin-top: 0.6rem;
+    border-radius: 0.8rem;
+    background: rgba(255, 218, 230, 0.85);
+}
+
+#task-list li span {
+
+
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+}
+
+#pomodoro {
+
+
+    grid-column: 2;
+    grid-row: 1;
+    height: 190px;
+    padding: 1.3rem;
+
+
+    background: rgba(255, 239, 244, 0.9);
+    border-radius: 1.4rem;
+}
+
+#pomodoro h2 {
+
+
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+
+
+    color: rgb(110, 40, 65);
+}
+
+#timer {
+
+
+    margin-top: 0.3rem;
+    padding: 0.25rem 0.7rem;
+    font-size: 2.6rem;
+
+
+    background: rgba(255, 232, 236, 0.8);
+    border-radius: 1.3rem;
+}
+
+#start-btn,
+#reset-btn {
+
+    margin-top: 0.6rem;
+
+    margin-bottom: 0;
+    padding: 0.45rem 0.85rem;
+    border: none;
+    
+    border-radius: 0.8rem;
+    background: rgb(202, 76, 119);
+    color: white;
+    
+    font-family: Fredoka, sans-serif;
+    cursor: pointer;
+}
+
+#WeatherDisplay {
+
+    grid-column: 2;
+    grid-row: 2;
+
+    height: 275px;
+    min-height: 0;
+    padding: 1.3rem;
+    background: rgba(243, 240, 250, 0.93);
+    border-radius: 1.4rem;
+}
+
+#WeatherDisplay h2 {
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+    color: rgb(110, 40, 65);
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+
+
+#city-input {
+
+
+    flex: 1;
+    min-width: 0;
+
+    height: 34px;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 2rem;
+
+
+    background:
+        linear-gradient(
+            135deg,
+            rgb(255, 244, 248),
+            rgb(241, 237, 250)
+        );
+    color: rgb(92, 45, 60);
+
+
+    font-family: Fredoka, sans-serif;
+    font-size: 0.9rem;
+}
+
+
+#city-input::placeholder {
+    color: rgb(120, 95, 105);
+    opacity: 0.75;
+}
+
+
+
+
+#weather-btn {
+
+
+    flex-shrink: 0;
+    height: 34px;
+    padding: 0.45rem 0.75rem;
+    border: none;
+
+
+    border-radius: 0.8rem;
+
+    background: rgb(202, 76, 119);
+    color: white;
+    font-family: Fredoka, sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+
+
+#location-btn {
+
+
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    background: rgb(255, 225, 237);
+    color: rgb(202, 76, 119);
+
+}
+
+
+
+
+.city-heading {
+
+    margin-top: 0.55rem;
+}
+
+
+
+
+
+#city-name {
+
+
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+
+
+
+
+#temperature {
+
+
+    margin-top: 0.1rem;
+    font-size: 2.6rem;
+}
+
+
+
+#condition {
+
+
+    margin-top: 0.1rem;
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+
+.weather-details {
+
+
+    margin-top: 0.7rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(202, 76, 119, 0.12);
+}
+
+
+.weather-details p {
+    font-size: 0.85rem;
+}
+
+
+
+#weather-error {
+
+
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+
+
+#music-player {
+
+
+    width: 330px;
+    bottom: 640px;
+    left: 20px;
+    padding: 0.9rem 1rem;
+
+
+    background: rgba(255, 241, 246, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.2rem;
+
+    box-shadow:
+        0 12px 35px rgba(91, 60, 90, 0.13);
+
+
+}
+
+
+
+.container:hover,
+#pomodoro:hover,
+#WeatherDisplay:hover {
+
+
+
+    transform: translateY(-2px);
+    box-shadow:
+        0 16px 38px rgba(91, 60, 90, 0.13),
+        0 4px 12px rgba(91, 60, 90, 0.06);
+
+}
+
+@media (max-width: 760px) {
+
+
+
+    body {
+        padding: 1.5rem 1rem 8rem;
+    }
+
+
+
+    #dashboard {
+
+
+        width: min(500px, 100%);
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto auto auto;
+        gap: 0.9rem;
+
+
+    }
+
+    .container {
+
+
+        grid-column: 1;
+        grid-row: 1;
+
+        height: 440px;
+
+
+    }
+
+    #pomodoro {
+        grid-column: 1;
+        grid-row: 2;
+
+
+    }
+
+    #WeatherDisplay {
+
+
+        grid-column: 1;
+
+        grid-row: 3;
+
+
+    }
+
+
+    #music-player {
+
+
+        width: min(330px, calc(100vw - 2rem));
+        left: 50%;
+
+        transform: translateX(-50%);
+
+
+    }
+
+
+}
+
+
+#dashboard {
+
+
+    transform: translate(-60px, 200px);
 
 }
