@@ -2,7 +2,7 @@
 
 # Sakura Productivity Dashboard
 
-A pastel Japanese-inspired productivity dashboard built with HTML, CSS & JavaScript.
+A Sakura-inspired productivity dashboard built with HTML, CSS & JavaScript.
 
 A single dashboard combining To-Do List, Pomodoro timer, weather, and music into one workspace to improve productivity!
 <br>
